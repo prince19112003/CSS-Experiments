@@ -40,8 +40,9 @@ A hardware-accelerated 3D object employing bounding `perspective` to calculate d
 
 ## 📂 Project Structure & Micro-Projects
 
-In addition to the main `index.html` showcasing all the elements together, the repository also includes standalone micro-projects focusing on specific, intricate UI challenges:
+The repository is organized into 5 standalone micro-projects focusing on specific, intricate UI challenges:
 
+* 🎨 **`Css-Elements`**: The main laboratory showcasing all 6 of the advanced CSS visual experiments.
 * 🖱️ **`Cursor-worm`**: An aesthetic, dynamic cursor manipulation interaction.
 * 💓 **`Heart-Beat-animation`**: A life-like, continuous heartbeat pulsing CSS animation.
 * ✨ **`Wish-Box`**: A magical, interactive UI gift box opening sequence.
@@ -64,7 +65,7 @@ In addition to the main `index.html` showcasing all the elements together, the r
    ```
 
 3. **Launch the Laboratory:**
-   Simply double-click or open `index.html` directly in your favorite modern browser (Chrome, Firefox, Safari, Edge) to explore the component lab dynamically. Or, open any of the individual micro-folders to see their standalone `index.html` files!
+   Open any of the 5 individual micro-folders and double-click their standalone `index.html` files in your favorite modern browser (Chrome, Firefox, Safari, Edge) to explore each component dynamically!
 
 ---
 

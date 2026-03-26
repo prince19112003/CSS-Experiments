@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    /* Immersive radial gradient background */
+    background: radial-gradient(circle at center, #1a0005 0%, #000000 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heart-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heart-icon {
+    font-size: 15rem;
+    color: #ff003c;
+    /* Advanced drop-shadow filter perfectly contours the shape unlike box/text shadow */
+    filter: drop-shadow(0 0 35px rgba(255, 0, 60, 0.8));
+    animation: heartbeat 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+    z-index: 10;
+    cursor: pointer;
+    transition: filter 0.3s;
+}
+
+.heart-icon:hover {
+    filter: drop-shadow(0 0 55px rgba(255, 0, 60, 1));
+}
+
+/* Hyper-realistic "Lub-dub" double beat rhythm */
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    15% { transform: scale(1.25); filter: drop-shadow(0 0 60px rgba(255, 0, 60, 1)); }
+    30% { transform: scale(1); }
+    45% { transform: scale(1.15); filter: drop-shadow(0 0 45px rgba(255, 0, 60, 0.9)); }
+    60% { transform: scale(1); }
+    100% { transform: scale(1); }
+}
+
+/* Pulsing energy rings perfectly synced with the heartbeat */
+.glow-ring {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 0, 60, 0.5);
+    animation: pulse-ring 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+    z-index: 1;
+}
+
+/* Syncs up with the second softer beat of the "lub-dub" */
+.glow-ring.delay {
+    animation-delay: 0.15s;
+}
+
+@keyframes pulse-ring {
+    0% {
+        transform: scale(0.8);
+        opacity: 1;
+        border-width: 10px;
+    }
+    60% {
+        transform: scale(3.5);
+        opacity: 0;
+        border-width: 0px;
+    }
+    100% {
+        transform: scale(3.5);
+        opacity: 0;
+    }
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Preconnect to Google Fonts for elegant typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <title>Magical Wish Box</title>
+</head>
+<body>
+    <div class="scene-container">
+        <!-- Interactive Trigger Overlay -->
+        <div class="trigger" id="glass-trigger"></div>
+        
+        <div class="gift-box">
+            <!-- Images that fly out magically -->
+            <div class="box-wish">
+                <img id="wish" src="output-onlinepngtools.png" alt="Wish">
+                <img src="1.png" alt="Memory" id="img1" class="pics">
+                <img src="2.png" alt="Memory" id="img2" class="pics">
+                <img src="3.png" alt="Memory" id="img3" class="pics">
+                <img src="4.png" alt="Memory" id="img4" class="pics">
+            </div>
+
+            <!-- Inside Depth of the Box -->
+            <div class="box-body-inner"></div>
+
+            <!-- The Front Body of the Box -->
+            <div class="box-body">
+                <div class="ribbon-vertical"></div>
+                <div class="ribbon-horizontal"></div>
+            </div>
+
+            <!-- The Beautiful Cap/Lid with Bow -->
+            <div class="box-cap">
+                <div class="ribbon-vertical"></div>
+                <div class="bow">
+                    <div class="bow-left"></div>
+                    <div class="bow-right"></div>
+                    <div class="bow-center"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <p>HOLD THE BOX</p>
+            <span>TO SEE MAGIC</span>
+        </div>
+    </div>
+
+    <!-- Hidden Audio elements -->
+    <audio src="WhatsApp Audio 2024-08-04 at 00.08.29_011efd3e.mp3" id="activeAudio" preload="auto"></audio>
+    <script src="script.js"></script>
+</body>
+</html>

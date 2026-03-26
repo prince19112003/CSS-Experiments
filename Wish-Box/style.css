@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    /* Immersive, rich dark radial background */
+    background: radial-gradient(circle at center, #2e1065, #0f172a);
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: #fff;
+    user-select: none; /* prevent text selection on intense holding */
+}
+
+.scene-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* The invisible element the user clicks and holds */
+.trigger {
+    position: absolute;
+    width: 280px;
+    height: 300px;
+    bottom: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    cursor: pointer;
+    border-radius: 20px;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Gift Box Scene anchor */
+.gift-box {
+    position: absolute;
+    bottom: 25%;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+/* Container for Flying Elements. Placed behind the front face of the box */
+.box-wish {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    z-index: 1;
+}
+
+.box-wish img {
+    position: absolute;
+    bottom: 40px;
+    object-fit: cover;
+    opacity: 0;
+}
+
+.pics {
+    width: 75px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    border-radius: 8px;
+    border: 3px solid rgba(255,255,255,0.9);
+}
+
+#wish {
+    width: 100px;
+    filter: drop-shadow(0 0 25px rgba(255, 230, 0, 0.8));
+    z-index: 5;
+}
+
+/* Depth for the open box effect */
+.box-body-inner {
+    position: absolute;
+    bottom: 0;
+    width: 152px;
+    height: 120px;
+    background: #7f1d1d; /* Dark crimson for internal depth */
+    border-radius: 8px;
+    z-index: 0;
+    box-shadow: inset 0 25px 30px rgba(0,0,0,0.8);
+}
+
+/* The rich, vibrant front of the box */
+.box-body {
+    position: absolute;
+    bottom: 0;
+    width: 160px;
+    height: 130px;
+    background: linear-gradient(135deg, #e11d48, #9f1239);
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6), inset 0 2px 5px rgba(255,255,255,0.2);
+    z-index: 2;
+    overflow: hidden;
+}
+
+/* Box Lid (overlaps carefully) */
+.box-cap {
+    position: absolute;
+    bottom: 110px;
+    width: 176px;
+    height: 48px;
+    background: linear-gradient(135deg, #f43f5e, #be123c);
+    border-radius: 12px;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.5), inset 0 2px 6px rgba(255,255,255,0.4);
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+    transform-origin: bottom right;
+}
+
+/* Metallic gold ribbons */
+.ribbon-vertical {
+    position: absolute;
+    width: 30px;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, #d97706, #fbbf24, #d97706);
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.3);
+}
+
+.ribbon-horizontal {
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(180deg, #d97706, #fbbf24, #d97706);
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.3);
+}
+
+/* Beautiful Ribbon Bow */
+.bow {
+    position: absolute;
+    top: -32px;
+    z-index: 5;
+}
+.bow-left, .bow-right {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    border: 9px solid #fbbf24;
+    border-radius: 50% 50% 0 50%;
+    top: 0;
+}
+.bow-left {
+    right: 5px;
+    transform: rotate(45deg);
+    box-shadow: inset 0px 5px 5px rgba(0,0,0,0.2);
+}
+.bow-right {
+    left: 5px;
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    box-shadow: inset -5px 5px 5px rgba(0,0,0,0.2);
+}
+.bow-center {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    background: #f59e0b;
+    border-radius: 50%;
+    left: -11px;
+    top: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+}
+
+/* Elegant Typography */
+.instructions {
+    position: absolute;
+    bottom: 50px;
+    text-align: center;
+    pointer-events: none;
+    text-shadow: 0 0 15px rgba(255,255,255,0.5);
+    transition: opacity 0.5s;
+}
+.instructions p {
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: #fbbf24;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+.instructions span {
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 8px;
+    opacity: 0.8;
+}
+
+/* ================== BUTTERY ANIMATIONS (Hover & Active) ================== */
+
+/* Subtle scale hint */
+.trigger:hover ~ .gift-box {
+    transform: scale(1.05);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Physical rattle shake */
+.trigger:active ~ .gift-box {
+    animation: box-rattle 0.3s ease-in-out infinite alternate;
+}
+
+@keyframes box-rattle {
+    0% { transform: scale(1.05) rotate(0deg) translateX(0); }
+    33% { transform: scale(1.05) rotate(2deg) translateX(3px); }
+    66% { transform: scale(1.05) rotate(-2deg) translateX(-3px); }
+    100% { transform: scale(1.05) rotate(1deg) translateX(1px); }
+}
+
+/* Eject the lid backward */
+.trigger:active ~ .gift-box .box-cap {
+    animation: eject-lid 0.6s cubic-bezier(0.175, 0.885, 0.32, 1) forwards;
+}
+
+@keyframes eject-lid {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(-160px) translateX(40px) rotate(45deg); opacity: 0; }
+}
+
+/* Turn opacity up simultaneously for all */
+.trigger:active ~ .gift-box .box-wish img {
+    opacity: 1;
+}
+
+/* Elegant popping paths for memories */
+.trigger:active ~ .gift-box .box-wish #img1 {
+    animation: explode-1 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.2) forwards;
+}
+.trigger:active ~ .gift-box .box-wish #img2 {
+    animation: explode-2 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.2) forwards;
+    animation-delay: 0.1s;
+}
+.trigger:active ~ .gift-box .box-wish #img3 {
+    animation: explode-3 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.2) forwards;
+    animation-delay: 0.05s;
+}
+.trigger:active ~ .gift-box .box-wish #img4 {
+    animation: explode-4 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.2) forwards;
+    animation-delay: 0.15s;
+}
+
+/* Grand entrance for the WISH */
+.trigger:active ~ .gift-box .box-wish #wish {
+    animation: explode-wish 1s cubic-bezier(0.175, 0.885, 0.32, 1.5) forwards;
+    animation-delay: 0.25s;
+}
+
+@keyframes explode-1 {
+    0% { transform: translate(0, 0) scale(0.5) rotate(0); }
+    100% { transform: translate(-140px, -180px) scale(1.1) rotate(-20deg); }
+}
+@keyframes explode-2 {
+    0% { transform: translate(0, 0) scale(0.5) rotate(0); }
+    100% { transform: translate(-60px, -260px) scale(1.3) rotate(-8deg); }
+}
+@keyframes explode-3 {
+    0% { transform: translate(0, 0) scale(0.5) rotate(0); }
+    100% { transform: translate(70px, -270px) scale(1.3) rotate(12deg); }
+}
+@keyframes explode-4 {
+    0% { transform: translate(0, 0) scale(0.5) rotate(0); }
+    100% { transform: translate(150px, -160px) scale(1.1) rotate(22deg); }
+}
+@keyframes explode-wish {
+    0% { transform: translate(0, 0) scale(0.1); opacity: 0; }
+    100% { transform: translate(0, -90px) scale(3.5); filter: drop-shadow(0 0 30px rgba(255, 230, 0, 1)); opacity: 1; }
+}
+
+/* Instructions fade out to clear the canvas */
+.trigger:active ~ .instructions {
+    opacity: 0;
+}
