@@ -14,29 +14,7 @@
   <br />
 </div>
 
-## 🌟 Visual Experiments
 
-A curated set of cutting-edge front-end rendering techniques exploring the bleeding edge of CSS and interactive design.
-
-### 1. 🌈 Glow Liquid Form
-Multi-layered spectral gradients using `@keyframes` mapped behind a button for an animated, moving neon background that creates a truly fluid cyber aesthetic.
-
-### 2. 🧊 Glassmorphism Interaction
-Real-time blurred backdrops mimicking frosted glass using CSS `backdrop-filter: blur()`, paired with delayed cubic-bezier revealing transitions. Gives a truly premium, sleek aesthetic depth.
-
-### 3. 🎛️ Neumorphic Deep Toggle
-Soft UI relying heavily on multi-layered internal and external box shadows to create authentic 3D depth that reacts dynamically over the CSS `:checked` pseudo-class without requiring JS.
-
-### 4. 💧 Fluid SVG Filter Loader
-A visually organic "gooey" animation built by combining CSS translations with an injected SVG `<feColorMatrix>` filter that seamlessly blends moving HTML div nodes together.
-
-### 5. 🔠 Background Mapped Typography
-Text rendered completely transparent while using `-webkit-background-clip: text` to mask an animated, continuously oscillating hyper-gradient backing.
-
-### 6. 🕶️ Perspective Tilt Shift Button
-A hardware-accelerated 3D object employing bounding `perspective` to calculate dramatic X/Y rotations with underlying volumetric shadow projections.
-
----
 
 ## 📂 Project Structure & Micro-Projects
 
@@ -56,7 +34,7 @@ The repository is organized into 5 standalone micro-projects focusing on specifi
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/CSS-Experiments.git
+   git clone https://github.com/prince19112003/CSS-Experiments.git
    ```
 
 2. **Navigate to the directory:**
